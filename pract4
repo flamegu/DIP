@@ -1,0 +1,6 @@
+AIM: Perform DFT of a 4x4 gray scale image.
+Code:
+clc;
+X=[1,1,1,1;1,1,1,1;1,1,1,1;1,1,1,1]
+X=fft(X,-1);
+disp(X,"X[k]=");
