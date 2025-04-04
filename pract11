@@ -1,0 +1,30 @@
+AIM: Binary Arithmetic. 
+Code:
+// Load color images
+img1 = imread("C:\Users\DIP\pract11\Tjh7Iey.jpg");
+img2 = imread("C:\Users\OneDrive\Desktop\sem6\DIP\pract11\VeUtzwn.jpg");
+
+// Ensure both images have the same size
+[rows, cols, channels] = size(img1);
+img2 = imresize(img2, [rows, cols]);
+
+// Perform binary arithmetic operations
+addition = img1 + img2;
+addition(addition > 255) = 255;  // Clipping to 8-bit range
+
+subtraction = abs(img1 - img2);
+
+multiplication = img1 .* 2;  // Example: Multiply image by a scalar
+multiplication(multiplication > 255) = 255;
+
+division = img1 ./ 2;  // Example: Divide image by a scalar
+division2 = img2 ./ 2;  // Example: Divide image by a scalar
+
+// Display results
+subplot(2,3,1), imshow(img1), title("Original Image 1");
+subplot(2,3,2), imshow(img2), title("Original Image 2");
+subplot(2,3,3), imshow(addition), title("Addition");
+subplot(2,3,4), imshow(subtraction), title("Subtraction");
+subplot(2,3,5), imshow(multiplication), title("Multiplication");
+//subplot(2,3,6), imshow(division), title("Division");
+subplot(2,3,6), imshow(division), title("Division2");
