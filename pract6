@@ -1,0 +1,59 @@
+Aim: Brightness Enhancement, Contrast Manipulation and Image Negative
+Steps:
+Install Image Processing and Signal Processing packages and restart scilab.
+Run this command on console: atomsRemove(‘scicv’)
+Restart scilab
+And run code
+1) Brightness Enhancement
+Code:
+clc;
+close;
+a = imread('C:\Users\Admin\Desktop\tycs_DIP\flower.jpg')
+a = rgb2gray(a);
+b = double(a)+50;
+b = uint8(b)
+figure(1)
+imshow(a)
+title('orignal image')
+figure(2)
+imshow(b)
+title('Increased brightness image')
+c = double(a) - 50;
+c = uint8(c)
+figure(3)
+imshow(c)
+title('decrease brightness image')
+
+2) Contrast Manipulation
+Code:
+clc;
+close;
+a = imread('C:\Users\Admin\Desktop\tycs_DIP\flower.jpg');
+a = rgb2gray(a);
+b = double(a)*0.5;
+b = uint8(b)
+c = double(b)*2;
+c = uint8(c)
+figure(1);
+imshow(a);
+title('Orignal image')
+figure(2)
+imshow(b);
+title('Decreased Contrast')
+figure(3)
+imshow(c);
+title('Increased Contrast')
+
+3) Image Negative
+Code:
+clc; 
+close; 
+a = imread('C:\Users\Admin\Desktop\tycs_DIP\flower.jpg');
+k = 255-double(a); 
+k = uint8(k); 
+figure(1) 
+imshow(a); 
+title('Original Image') 
+figure(2) 
+imshow(k); 
+title('Negative of Original Image')
